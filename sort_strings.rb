@@ -1,6 +1,6 @@
 things_to_sort = <<-EOS
-add_link, count, form, collection, new_item, remove_link
-EOS
-array = things_to_sort.split(',')
+$context, $modal_trigger, view, template, $form, repeat_interval, start_date, summary, selected_weekly_days, repeat_types, str, common, now
+ EOS
+array = things_to_sort.gsub(/;/,'').split(/,/)
 clean = array.map{|i| i.strip.chomp}
-puts clean.sort.join(', ')
+puts clean.uniq.sort.join(', ')
